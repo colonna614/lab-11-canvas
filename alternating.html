@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body onload="draw()">
+<canvas id="sketch" width="600" height="300">
+</canvas>
+<script>
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+	
+	var spacing = 10;
+	for(var i = 0; i <= 9; i = i + 1)
+	{
+		if (i % 2 === 0)
+		{
+			context.fillStyle = "#aaaaff"
+			context.beginPath();
+			context.arc(20 + spacing , 30, 10, 0, 2 * Math.PI, true);
+			context.closePath();
+			context.fill();
+		}
+		else if (i % 2 === 1)
+		{
+			context.fillStyle = "#ffaaaa"
+			context.fillRect(10 + spacing , 20, 20, 20);
+			
+		}
+		spacing = spacing + 45;
+	}
+}
+</script>
+</body>
+</html>
