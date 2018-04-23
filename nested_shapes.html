@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<body onload="draw()">
+<canvas id="sketch" width="1000" height="1000">
+</canvas>
+<script>
+function draw() {
+	var sketch = document.getElementById('sketch');
+	var context = sketch.getContext("2d");
+	
+	var spacingx = 10;
+	var spacingy = 10;
+	
+	var row = prompt ("How many rows would you like?");
+	var row_final = parseInt (row,10);
+	
+	var col = prompt ("How many columns would you like?");
+	var col_final = parseInt (col,10);
+	
+	for (var j = 0 ; j <row_final; j = j + 1 )
+	{
+		spacingx = 10;
+		if ( j % 3 === 0)
+		{
+			for(var i = 0; i < col_final; i = i + 1)
+			{
+				if (i  % 3 === 0)
+				{
+				context.fillStyle = "#aabbff"
+				context.beginPath();
+				context.arc(20 + spacingx , 30 + spacingy, 10, 0, 2 * Math.PI, true);
+				context.closePath();
+				context.fill();
+				}
+				else if (i % 3 === 1)
+				{
+				context.fillStyle = "#ffbbaa"
+				context.fillRect(10 + spacingx , 20 + spacingy, 20, 20);
+				}
+				else if (i % 3 === 2)
+				{
+				context.fillStyle = "#00f000"
+				context.fillRect(10 + spacingx , 20 + spacingy, 20, 20);
+				}
+				spacingx = spacingx + 45;
+			}
+		}
+		else if (j % 3 === 1)
+		{
+			for(var i = 0; i < col_final; i = i + 1)
+			{
+				if (i  % 3 === 1)
+				{
+				context.fillStyle = "#aabbff"
+				context.beginPath();
+				context.arc(20 + spacingx , 30 + spacingy, 10, 0, 2 * Math.PI, true);
+				context.closePath();
+				context.fill();
+				}
+				else if (i % 3 === 2)
+				{
+				context.fillStyle = "#ffbbaa"
+				context.fillRect(10 + spacingx , 20 + spacingy, 20, 20);
+			
+				}
+				else if (i % 3 === 0)
+				{
+					context.fillStyle = "#00f000"
+					context.fillRect(10 + spacingx , 20 + spacingy, 20, 20);
+				}
+			spacingx = spacingx + 45;
+			}
+		}
+		else if (j % 3 === 2)
+		{
+			for(var i = 0; i < col_final; i = i + 1)
+			{
+				if (i  % 3 === 2)
+				{
+				context.fillStyle = "#aabbff"
+				context.beginPath();
+				context.arc(20 + spacingx , 30 + spacingy, 10, 0, 2 * Math.PI, true);
+				context.closePath();
+				context.fill();
+				}
+				else if (i % 3 === 0)
+				{
+				context.fillStyle = "#ffbbaa"
+				context.fillRect(10 + spacingx , 20 + spacingy, 20, 20);
+			
+				}
+				else if (i % 3 === 1)
+				{
+					context.fillStyle = "#00f000"
+					context.fillRect(10 + spacingx , 20 + spacingy, 20, 20);
+				}
+				spacingx = spacingx + 45;
+			}
+	}
+		spacingy = spacingy + 45;
+	}
+}
+
+</script>
+</body>
+</html>
